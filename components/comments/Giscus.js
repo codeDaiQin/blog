@@ -18,15 +18,14 @@ const Giscus = ({ mapping }) => {
   const LoadComments = useCallback(() => {
     setEnabledLoadComments(false)
 
-    const { repo, repositoryId, category, categoryId, reactions, metadata, inputPosition, lang } =
-      siteMetadata?.comment?.giscusConfig
+    const { reactions, metadata, inputPosition, lang } = siteMetadata?.comment?.giscusConfig
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
-    script.setAttribute('data-repo', repo)
-    script.setAttribute('data-repo-id', repositoryId)
-    script.setAttribute('data-category', category)
-    script.setAttribute('data-category-id', categoryId)
+    script.setAttribute('data-repo', 'CodeDaiqin/blog')
+    script.setAttribute('data-repo-id', 'R_kgDOHG6IrQ')
+    script.setAttribute('data-category', 'General')
+    script.setAttribute('data-category-id', 'DIC_kwDOHG6Irc4COlJw')
     script.setAttribute('data-mapping', mapping)
     script.setAttribute('data-reactions-enabled', reactions)
     script.setAttribute('data-emit-metadata', metadata)
@@ -54,7 +53,7 @@ const Giscus = ({ mapping }) => {
 
   return (
     <div className="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300">
-      {enableLoadComments && <button onClick={LoadComments}>Load Comments</button>}
+      {enableLoadComments && <button onClick={LoadComments}>查看评论</button>}
       <div className="giscus" id={COMMENTS_ID} />
     </div>
   )

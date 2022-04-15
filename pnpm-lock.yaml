@@ -23,6 +23,7 @@ specifiers:
   image-size: 1.0.0
   inquirer: ^8.1.1
   lint-staged: ^11.0.0
+  markdown-navbar: ^1.4.3
   mdx-bundler: ^8.0.0
   next: 12.0.9
   next-remote-watch: ^1.0.0
@@ -60,6 +61,7 @@ dependencies:
   github-slugger: 1.4.0
   gray-matter: 4.0.3
   image-size: 1.0.0
+  markdown-navbar: 1.4.3
   mdx-bundler: 8.1.0_esbuild@0.13.15
   next: 12.0.9_react-dom@17.0.2+react@17.0.2
   next-themes: 0.0.14_b543ccecfd29856b35e58d884b6ddddd
@@ -2647,6 +2649,11 @@ packages:
     requiresBuild: true
     dev: true
 
+  /core-js/3.22.0:
+    resolution: {integrity: sha512-8h9jBweRjMiY+ORO7bdWSeWfHhLPO7whobj7Z2Bl0IDo00C228EdGgH7FE4jGumbEjzcFfkfW8bXgdkEDhnwHQ==}
+    requiresBuild: true
+    dev: false
+
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: false
@@ -4735,6 +4742,14 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  /markdown-navbar/1.4.3:
+    resolution: {integrity: sha512-esZQ9fHbjnOq/YnmKRrHTRhIO5+UmU3g5BS2tly7RwWrWCjOWv0Nq2A8r1GF9IBZKvrwM/rzaMgjjsQlkbh0tA==}
+    dependencies:
+      core-js: 3.22.0
+      prop-types: 15.8.1
+      react: 16.14.0
+    dev: false
+
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
     dev: false
@@ -5964,7 +5979,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
-    dev: true
 
   /property-information/6.1.1:
     resolution: {integrity: sha512-hrzC564QIl0r0vy4l6MvRLhafmUowhO/O3KgVSoXIbbA2Sz4j8HGpJc6T2cubRVwMwpdiG/vKGfhT4IixmKN9w==}
@@ -6054,7 +6068,15 @@ packages:
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: true
+
+  /react/16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.8.1
+    dev: false
 
   /react/17.0.2:
     resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
