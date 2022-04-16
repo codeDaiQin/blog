@@ -24,16 +24,14 @@ pnpm i eslint -D
 初始化
 
 ```shell
-npx eslint --init
+echo {}> .eslintrc
 ```
 
-会生产`.eslintrc.js`配置文件
+配置如下 使用时去掉注释
 
-配置如下
-
-```js
-// .eslintrc.js
-module.exports = {
+```json
+// .eslintrc
+{
    "extends": [
      // 第1种情况
      "eslint: recommended",
@@ -64,16 +62,16 @@ echo {}> .prettierrc
 
 配置如下
 
-```js
-// .prettierrc.js
-module.exports = {
-  printWidth: 80, //一行的字符数，如果超过会进行换行，默认为80
-  tabWidth: 2, // 一个 tab 代表几个空格数，默认为 2 个
-  useTabs: false, //是否使用 tab 进行缩进，默认为false，表示用空格进行缩减
-  singleQuote: true, // 字符串是否使用单引号，默认为 false，使用双引号
-  semi: true, // 行尾是否使用分号，默认为true
-  trailingComma: 'none', // 是否使用尾逗号
-  bracketSpacing: true, // 对象大括号直接是否有空格，默认为 true，效果：{ a: 1 }
+```json
+// .prettierrc
+{
+  "printWidth": 80, //一行的字符数，如果超过会进行换行，默认为80
+  "tabWidth": 2, // 一个 tab 代表几个空格数，默认为 2 个
+  "useTabs": false, //是否使用 tab 进行缩进，默认为false，表示用空格进行缩减
+  "singleQuote": true, // 字符串是否使用单引号，默认为 false，使用双引号
+  "semi": true, // 行尾是否使用分号，默认为true
+  "trailingComma": "none", // 是否使用尾逗号
+  "bracketSpacing": true // 对象大括号直接是否有空格，默认为 true，效果：{ a: 1 }
 }
 ```
 
@@ -85,39 +83,38 @@ eslint-config-prettier 用来覆盖 ESLint 本身的规则配置，而 eslint-pl
 pnpm i eslint-config-prettier eslint-plugin-prettier -D
 ```
 
-配置如下
+配置如下 使用时去掉注释
 
-```js
-// .eslintrc.js
-module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
+```json
+{
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     // 1. 接入 prettier 的规则
-    'prettier',
-    'plugin:prettier/recommended',
+    "prettier",
+    "plugin:prettier/recommended"
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   // 2. 加入 prettier 的 eslint 插件
-  plugins: ['@typescript-eslint', 'prettier'],
-  rules: {
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
     // 3. 注意要加上这一句，开启 prettier 自动修复的功能
-    'prettier/prettier': 'error',
-    quotes: ['error', 'single'],
-    semi: ['error', 'always'],
-    'react/react-in-jsx-scope': 'off',
-  },
+    "prettier/prettier": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "react/react-in-jsx-scope": "off"
+  }
 }
 ```
 
