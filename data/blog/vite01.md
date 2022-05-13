@@ -4,7 +4,6 @@ date: '2022-04-13'
 tags: ['vite', 'ESLint']
 draft: false
 summary: 利用 Lint 工具链来保证代码风格和质量
-canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/new-features-in-v1/
 ---
 
 # 利用 Lint 工具链来保证代码风格和质量
